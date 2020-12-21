@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <p>클로저테스트</p>
+    <script>
+        // var arr = []
+        // for(var i = 0; i< 5; i++) {
+        //     arr[i] = function() {
+        //         return i;
+        //     }
+        // }
+        // for(var index in arr) {
+        //     console.log(arr[index]());
+        // }  잘못된 코드
+
+        var arr = []
+        for(var i = 0; i < 5; i++){
+            arr[i] = function(id) {
+                return function(){
+                    return id;
+                }
+            }(i);
+        }
+        for(var index in arr) {
+            console.log(arr[index]());
+        }
+    </script>
+</body>
+</html>

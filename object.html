@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        var ob = {'dan':10, 'cat':'client'};
+        alert(ob['cat']);
+
+        var bj = {};
+        bj['mal'] = 20;
+        bj['ddack'] = 15;
+
+        var je = new Object();
+        je['bot'] = 25;
+        je['doit'] = 12;
+        alert(je.bot);
+
+        for(key in bj) {
+            document.write("key : " + key + " value : " + bj[key]+"<br />");
+        }
+
+        var ec = {
+            'list' : {'malang':911, 'dandan':921, 'ddakddak':1111},
+            'show' : function(){
+                for(var name in this.list) {
+                    document.write(name+' : '+this.list[name]+"<br />");
+                }
+            }
+        };
+        ec.show();
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        var member = ['dancat', 'malcat', 'ddakcat']
+        for(var i = 0; i < member.length; i++){
+            document.write(member[i] + '<br />');
+        }
+
+        function get_members(){
+            return ['dancats', 'malcats', 'ddakcats'];
+        }
+        var members = get_members();
+        for(var i = 0; i < members.length; i++){
+            document.write(members[i] + '<br />');
+        }
+
+        var list = ['a', 'b', 'c']
+        list.push('d');                 //배열에 d 추가 [a, b, c, d]
+        list = list.concat(['e', 'f']); //배열에 복수 값 추가 [a, b, c, d, e, f]
+        list.unshift('1');              //배열 맨 앞에 원소 추가 [1, a, b, c, d, e, f]
+        list.splice(2, 0, 'B');         //2번째 원소부터 0개의 값을 제거하고 B를 넣음 [1, a, B, c, d, e, f]
+        list.shift();                   //첫번째 원소 제거 [a, B, c, d, e, f]
+        list.pop();                     //마지막 원소 제거 [a, B, c, d, e]
+
+        var li = ['c', 'e', 'a', 'b', 'd'];
+        li.sort();                      //정렬
+        li.reverse();                   //역순 정렬
+    </script>
+</body>
+</html>

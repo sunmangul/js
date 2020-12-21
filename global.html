@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        //객체를 전역변수로 만들고
+        //객체의 속성으로 변수를 관리
+        MYAPP = {}
+        MYAPP.calculator = {
+            'left' : null,
+            'right' : null
+        }
+        MYAPP.coordinate = {
+            'left' : null,
+            'right' : null
+        }
+        
+        MYAPP.calculator.left = 10;
+        MYAPP.calculator.right = 20;
+        function sum(){
+            return MYAPP.calculator.left + MYAPP.calculator.right;
+        }
+        document.write(sum());
+
+        //익명 함수를 호출하여 전역 사용X
+        (function(){
+            var MYAPP = {}
+            MYAPP.calculator = {
+                'left' : null,
+                'right' : null
+            }
+            MYAPP.coordinate = {
+                'left' : null,
+                'right' : null
+            }
+            MYAPP.calculator.left = 10;
+            MYAPP.calculator.right = 20;
+            function sum(){
+                return MYAPP.calculator.left + MYAPP.calculator.right;
+            }
+            document.write(sum());
+        }())
+        var i = 5;
+        function a(){
+            var i = 10;
+            b();
+        }
+        function b(){
+            document.write(i);
+        }
+        a();    //a안에서 직접 호출하는 경우가 아닐경우 재선언하고
+                //a에서 함수를 호출하여 i를 호출해도 전역변수가 호출됨
+        var o = {'func':function(){
+            alert('Hello?');
+        }}
+        o.func();
+        window.o.func(); //전역객체:모든 객체는 이 전역객체의 프로퍼티이다.
+    </script>
+</body>
+</html>

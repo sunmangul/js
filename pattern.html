@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var pattern = /a/
+        var patterns = new RegExp('a');
+        console.log(pattern.exec('abcdef')); //["a"] 출력
+        console.log(pattern.test('abcdef')); //true 출력
+        console.log('abcdef'.match(pattern)); //["a"] 출력
+        console.log('abcdef'.replace(pattern, 'A')); //Abcdef 출력
+
+        var xi = /a/;
+        console.log("Abcde".match(xi)); // null
+        var oi = /a/i;
+        console.log("Abcde".match(oi)); // ["A"];
+
+        //g를 붙이면 검색된 모든 결과 리턴
+        var xg = /a/;
+        console.log("abcdea".match(xg));
+        var og = /a/g;
+        console.log("abcdea".match(og));
+    </script>
+
+</body>
+</html>
